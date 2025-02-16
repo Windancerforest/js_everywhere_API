@@ -1,10 +1,12 @@
 const { gql } = require('apollo-server-express');
 
-module.exports=gql`
+module.exports=gql` scalar DateTime
     type Note{
         id:ID!
         content:String!
         author:String!
+        createdAt: DateTime!
+        updatedAt: DateTime!
     }
     type Book{
         title:String!
@@ -21,6 +23,8 @@ module.exports=gql`
   type Mutation {
     newNote(content: String!): Note!
     newBook(title:String!,author:String!):Book!
+    deleteNote(id:ID!):Boolean!
+    updateNote(id:ID!,content:String!):Note!
   }`;
 
   
