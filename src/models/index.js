@@ -1,9 +1,10 @@
 const Book = require('./book');
 const Note = require('./note');
-
+const User = require('./user');
 const models = {
   Note,
-  Book
+  Book,
+  User
 };
 
 module.exports = models;
